@@ -27,5 +27,26 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Passport::routes();
+
+        Passport::tokensCan([
+
+            /**
+             * app scopes
+             */
+            'show' => 'Show data',
+            'store' => 'Store new data',
+            'update' => 'Update data',
+            'delete' => 'Delete data',
+
+            /**
+             * system scopes
+             */
+            'construct' => 'Constructor database tables',
+
+            /**
+             * unlimited scope (*)
+             */
+            'superuser' => 'Unlimited rules',
+        ]);
     }
 }

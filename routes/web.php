@@ -11,8 +11,13 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/passport-clients', 'PassportClientsController@index')->name('passport-clients');
+Route::get('/passport-authorized-clients', 'PassportAuthorizedClientsController@index')->name('passport-authorized-clients');
+Route::get('/passport-personal-access-tokens', 'PassportPersonalAccessTokensController@index')->name('passport-personal-access-tokens');

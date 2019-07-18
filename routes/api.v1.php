@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,10 +11,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware(['auth:api', 'scope:construct,superuser'])->namespace('Api\V1\Construct')->group(function () {
+    Route::apiResource('/construct', 'ConstructController');
 });
 
-Route::namespace('Api\V1\Construct')->group(function () {
-    Route::apiResource('/v1/construct', 'ConstructController');
+Route::middleware('client')->namespace('Api\V1\Queries')->group(function () {
+    Route::post('/query', 'QueryController@index');
 });
