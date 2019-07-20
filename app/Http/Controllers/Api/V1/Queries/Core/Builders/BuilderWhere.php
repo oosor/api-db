@@ -11,6 +11,23 @@ namespace App\Http\Controllers\Api\V1\Queries\Core\Builders;
 
 use Illuminate\Database\Query\Builder;
 
+/** available ['where', 'orWhere', 'whereIn', 'orWhereIn', 'whereNull', 'whereNotNull', 'whereDate']
+ * [
+ *  ['type' => 'where', 'column' => 'name_col', 'is' => '=', 'value' => 'free_val',
+ *      'closure' => [
+ *          `validationWhere` expressions
+ *      ],
+ *  ],
+ *  ['type' => 'orWhere', 'column' => 'id', 'is' => '>', 'value' => '3'],
+ *  ['type' => 'whereIn', 'column' => 'id', 'value' => ['3', '4', '6']],
+ *  ['type' => 'orWhereIn', 'column' => 'id', 'value' => ['3', '4', '6']],
+ *  ['type' => 'whereNull', 'column' => 'name_col'],
+ *  ['type' => 'whereNotNull', 'column' => 'name_col'],
+ *  ['type' => 'whereDate', 'column' => 'created_at', 'value' => '2016-12-31'],
+ *  ['type' => 'whereDate', 'column' => 'created_at', 'is' => '>', 'value' => '2016-12-31'],
+ * ]
+ *
+ * */
 class BuilderWhere
 {
     private $query;

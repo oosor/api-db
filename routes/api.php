@@ -11,11 +11,6 @@
 |
 */
 
-
-Route::middleware(['auth:api', 'scope:construct,superuser'])->namespace('Api\V1\Construct')->group(function () {
-    Route::apiResource('/construct', 'ConstructController');
-});
-
-Route::middleware('client')->namespace('Api\V1\Queries')->group(function () {
-    Route::post('/query', 'QueryController@index');
+Route::middleware('auth:api')->namespace('Api\Auth')->group(function () {
+    Route::apiResource('/auth-personal-tokens', 'PersonalTokenController')->only(['store'/*in future version will adding other methods*/]);
 });

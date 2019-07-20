@@ -137,7 +137,7 @@ class Column implements ColumnContract
                     foreach ($this->column['options'] as $option) {
                         switch ($requiring[1]) {
                             case 'integer':
-                                if (!is_integer($option)) {
+                                if (!is_numeric($option)) {
                                     throw new ValidationException('Column data[options] does\'t valid TYPE_OPTIONS enum(integer)');
                                 }
                                 $this->validationColumn['options'] = $this->column['options'];
@@ -152,7 +152,7 @@ class Column implements ColumnContract
                     }
                     return;
                 }
-            } else if (is_integer($this->column['options']) && static::TYPE_OPTIONS[$this->column['type']] == 'integer') {
+            } else if (is_numeric($this->column['options']) && static::TYPE_OPTIONS[$this->column['type']] == 'integer') {
                 $this->validationColumn['options'] = [$this->column['options']];
                 return;
             }
