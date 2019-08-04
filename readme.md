@@ -25,7 +25,7 @@
 
 ## Установка и настройка
 
-1. Скачать репозиторий [Сервера](https://gitlab.com/api-db/server) и установить все пакеты composer.
+1. Скачать репозиторий [Сервера](https://github.com/oosor/api-db) и установить все пакеты composer.
 2. Настроить все подключения к базам данных:
     - **DB_CONNECTION_CONTROL**=mysql-control - системная База данных (используется для данных контроля подключений к серверу);
     - **DB_CONNECTION_STORAGE**=mysql-storage - База данных для клиентских таблиц и данных.
@@ -37,7 +37,7 @@
 
 ## Управление таблицами Базы данных
 
-Для простой работы с конструктором таблиц Базы данных существует отдельная библиотека [oosor/client-php-construct](https://gitlab.com/api-db/client-php)
+Для простой работы с конструктором таблиц Базы данных существует отдельная библиотека [oosor/api-db-client-construct](https://github.com/oosor/api-db-client-construct)
 
 #### Список всех таблиц Базы данных
 
@@ -337,7 +337,7 @@ error:
 
 ## Работа с данными Базы данных
 
-Для простой работы с данными Базы данных существует отдельная библиотека [oosor/client-php-query](https://gitlab.com/api-db/client-php-query)
+Для простой работы с данными Базы данных существует отдельная библиотека [oosor/api-db-client-query](https://github.com/oosor/api-db-client-query)
 
 #### Получение данных Базы данных
 
@@ -702,7 +702,7 @@ error:
 
 ## Авторизация в сервисе
 
-Для простой работы с авторизацией и получением токенов существует отдельная библиотека [oosor/client-php-auth](https://gitlab.com/api-db/client-php-auth)
+Для простой работы с авторизацией и получением токенов существует отдельная библиотека [oosor/api-db-client-auth](https://github.com/oosor/api-db-client-auth)
 
 В сервере настроен механизм сильной безопасности с помощью OAuth2 (Passport API) на токенах Bearer.
 Все запросы в сервер должны сопровождаться заголовками `Accept: application/json` (для правильной работы API OAuth) и 
